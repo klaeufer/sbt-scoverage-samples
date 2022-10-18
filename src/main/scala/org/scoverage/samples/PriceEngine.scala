@@ -7,7 +7,7 @@ import scala.language.postfixOps
 
 class PriceEngine(generator: QuoteGenerator) extends Actor {
 
-  var cancellable: Cancellable = _
+  var cancellable: Cancellable | Null = _
 
   def receive = {
     case StartService =>
@@ -27,7 +27,7 @@ class PriceEngine(generator: QuoteGenerator) extends Actor {
 
   def stop(): Unit = {
     if (cancellable != null)
-      cancellable.cancel()
+      cancellable.nn.cancel()
   }
 
   override def preStart(): Unit = {

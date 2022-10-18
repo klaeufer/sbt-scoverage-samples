@@ -11,6 +11,7 @@ crossScalaVersions := Seq("2.13.9", "3.2.0")
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Werror")
+scalacOptions ++= Seq("-Yexplicit-nulls", "-Ysafe-init")
 
 libraryDependencies ++= Seq(
   "commons-io"             %  "commons-io"    % "2.11.0",

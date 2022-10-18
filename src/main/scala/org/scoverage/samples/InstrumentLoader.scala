@@ -22,10 +22,11 @@ object InstrumentLoader {
         getClass.getResourceAsStream("/org/scoverage/dow.csv"),
         "UTF-8"
       )
+      .nn
       .asScala
       .map(line => {
         val tokens = line.split(',')
-        Instrument(tokens(0).trim, tokens(1).trim)
+        Instrument(tokens(0).trim.nn, tokens(1).trim.nn)
       })
       .toSet
   }
