@@ -4,14 +4,14 @@ organization := "org.scoverage"
 
 version := "1.6.1"
 
-scalaVersion := "3.2.0"
+scalaVersion := "3.2.1"
 
-crossScalaVersions := Seq("2.13.9", "3.2.0")
+crossScalaVersions := Seq("2.13.9", "3.2.1")
 
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Werror")
-scalacOptions ++= Seq("-Yexplicit-nulls", "-Ysafe-init")
+scalacOptions ++= Seq("-Yexplicit-nulls")//, "-Ysafe-init")
 
 libraryDependencies ++= Seq(
   "commons-io"             %  "commons-io"    % "2.11.0",
@@ -31,6 +31,7 @@ coverageMinimumStmtPerPackage := 70
 coverageMinimumBranchPerPackage := 70
 coverageMinimumStmtPerFile := 70
 coverageMinimumBranchPerFile := 70
+
 
 Test / publishArtifact := false
 Test / parallelExecution := false
